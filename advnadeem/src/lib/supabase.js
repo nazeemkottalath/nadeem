@@ -1,12 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl  = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnon = import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabaseUrl = 'https:/ryudgscczrylbyefgexk.supabase.co'
+const supabaseAnon = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5dWRnc2NjenJ5bGJ5ZWZnZXhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1MTAwODUsImV4cCI6MjA5NDA4NjA4NX0.E2D-Wy8RtdF8rEDpb9V-xkpJeDjT1jYV8OWti5wQtNI'
 
-if (!supabaseUrl || !supabaseAnon) {
-  console.error('Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY in .env')
-}
-
-// Public client — used for all reads and admin writes
-// (writes are protected by checking the admin PIN before calling)
 export const supabase = createClient(supabaseUrl, supabaseAnon)
