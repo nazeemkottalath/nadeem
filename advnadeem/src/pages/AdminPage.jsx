@@ -7,7 +7,7 @@ import {
 } from '../lib/db'
 import { supabase } from '../lib/supabase'
 
-const CATEGORIES = ['Law', 'History', 'Politics', 'Travel', 'Other']
+const CATEGORIES = ['Criminal Defence', 'Family & Matrimonial Law', 'Cheque Dishonour', 'Commercial Disputes', 'Motor Accident Claims', 'Advisory & Consultation']
 
 function Field({ label, children }) {
   return (
@@ -125,7 +125,7 @@ export default function AdminDashboard({ about, setAbout, posts, setPosts, pract
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
               <h2 style={{ color: C.navy, fontFamily: "'Manjari', Georgia, serif", fontSize: '1.2rem', margin: 0 }}>Articles ({posts.length})</h2>
-              <button onClick={() => setNewPost({ id: '__new__', title: '', slug: '', category: 'Law', excerpt: '', content: '', lang: 'en', cover_image: '' })}
+              <button onClick={() => setNewPost({ id: '__new__', title: '', slug: '', category: 'Criminal Defence', excerpt: '', content: '', lang: 'en', cover_image: '' })}
                 style={{ background: C.navy, color: C.white, border: 'none', padding: '9px 20px', borderRadius: 5, cursor: 'pointer', fontFamily: 'monospace', fontSize: '0.78rem', fontWeight: 700 }}>+ New Article</button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
