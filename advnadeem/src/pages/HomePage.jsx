@@ -1,115 +1,134 @@
 import { Link } from 'react-router-dom'
-import { C } from '../lib/theme'
+import { C } from '../lib/theme.js'
 
-const PRINCIPLES = [
-  {
-    num: 'I',
-    title: 'Procedural Discipline',
-    body: 'Timelines, notice requirements, limitation periods, and filing obligations are treated as primary litigation work. A matter lost on procedure is a matter that did not need to be lost.',
-  },
-  {
-    num: 'II',
-    title: 'Factual Preparation',
-    body: 'Arguments are built from the record. The strongest legal position available is identified from the facts as they are, not as they might be arranged.',
-  },
-  {
-    num: 'III',
-    title: 'Frank Assessment',
-    body: 'The legal position is communicated as it stands. Clients are not offered a view shaped by what they wish to hear. Clarity at the outset determines the quality of decisions made thereafter.',
-  },
+const AREAS = [
+  { slug: 'criminal-defence', title: 'Criminal Defence', desc: 'Bail, anticipatory bail, FIR matters, and full criminal trial representation before Kozhikode courts.' },
+  { slug: 'family-matrimonial-law', title: 'Family & Matrimonial Law', desc: 'Divorce, maintenance, child custody, domestic matters before Family Courts in Kozhikode.' },
+  { slug: 'cheque-dishonour', title: 'Cheque Dishonour', desc: 'Negotiable Instruments Act cases — both prosecution and defence of dishonoured cheque matters.' },
+  { slug: 'commercial-disputes', title: 'Commercial Disputes', desc: 'Commercial debt recovery proceedings.' },
+  { slug: 'motor-accident-claims', title: 'Motor Accident Claims', desc: 'Compensation claims before Motor Accidents Claims Tribunals in Kozhikode district.' },
+  { slug: 'advisory-consultation', title: 'Advisory & Consultation', desc: 'Legal consultation, document review, and advisory services for individuals and businesses.' },
 ]
 
-const PRACTICE_AREAS = [
-  { title: 'Criminal Defence',         scope: 'FIR matters, regular bail, anticipatory bail, trial proceedings',   slug: 'criminal-defence' },
-  { title: 'Family & Matrimonial Law', scope: 'Divorce, maintenance, child custody, succession and partition',      slug: 'family-matrimonial-law' },
-  { title: 'Cheque Dishonour',         scope: 'NI Act proceedings for complainants and accused',                    slug: 'cheque-dishonour-section-138' },
-  { title: 'Commercial Disputes',      scope: 'Commercial debt recovery proceedings',                               slug: 'commercial-disputes' },
-  { title: 'Motor Accident Claims',    scope: 'Compensation claims and insurer defence before MACT',                slug: 'motor-accident-claims' },
-  { title: 'Advisory & Consultation',  scope: 'Pre-litigation assessment and legal advice',                         slug: 'advisory-consultation' },
+const PRINCIPLES = [
+  { title: 'Careful Preparation', body: 'Every matter is approached with thorough legal research and detailed preparation before court.' },
+  { title: 'Practical Advice', body: 'Legal counsel focused on practical outcomes, communicated clearly to each client.' },
+  { title: 'Personal Attention', body: 'Each client and matter receives individual attention tailored to its specific circumstances.' },
 ]
 
 export default function HomePage() {
   return (
-    <div style={{ background: C.offWhite }}>
+    <div>
+      {/* ── HERO ── */}
+      <section style={{ background: C.navy, color: C.white, padding: 'clamp(3.5rem,7vw,5.5rem) 1.5rem clamp(3rem,6vw,5rem)' }}>
+        <div className="hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'center' }}>
 
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section style={{ background: `linear-gradient(150deg, ${C.navyDark} 0%, #1e3060 100%)`, padding: 'clamp(4rem,8vw,6rem) 1.5rem clamp(3.5rem,7vw,5rem)' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <p style={{ color: C.goldLight, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
-            Advocates & Legal Consultants · Kozhikode
-          </p>
-          <h1 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontWeight: 700, lineHeight: 1.08, margin: '0 0 0.5rem' }}>
-            <span style={{ display: 'block', fontSize: 'clamp(2rem,6vw,4rem)', textTransform: 'uppercase' }}>Advocate Nadeem Mohammed V.K.</span>
-          </h1>
-          <p style={{ color: '#a8bcd4', fontFamily: 'monospace', fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '1rem 0 1.25rem' }}>
-            Advocate · District Court Kozhikode & Subordinate Courts at Kozhikode District
-          </p>
-          <div style={{ width: 48, height: 2, background: C.gold, marginBottom: '1.75rem' }} />
-          <p style={{ color: C.white, fontFamily: "'Manjari', Georgia, serif", fontSize: 'clamp(1.1rem,2.5vw,1.35rem)', fontWeight: 700, marginBottom: '1rem' }}>
-            Principled advocacy. Disciplined practice.
-          </p>
-          <p style={{ color: '#c9daf8', fontSize: '1rem', lineHeight: 1.8, maxWidth: 620, marginBottom: '2.5rem' }}>
-            The chambers of Advocate Nadeem Mohammed V.K. conducts litigation before district court Kozhikode and courts and tribunals across Kozhikode district. Matters are prepared with attention to both legal principle and procedural consequence.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link to="/contact" style={{ background: C.white, color: C.navy, padding: '13px 28px', borderRadius: 4, textDecoration: 'none', fontFamily: 'monospace', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.06em' }}>
-              Book a Consultation →
-            </Link>
-            <Link to="/practice-areas" style={{ background: 'none', border: `2px solid rgba(255,255,255,0.3)`, color: C.white, padding: '13px 28px', borderRadius: 4, textDecoration: 'none', fontFamily: 'monospace', fontSize: '0.82rem', letterSpacing: '0.06em' }}>
-              Practice Areas →
-            </Link>
+          {/* Left — text */}
+          <div>
+            <div style={{ fontSize: 12, letterSpacing: '0.22em', color: C.goldLight, textTransform: 'uppercase', marginBottom: 24, fontFamily: 'monospace' }}>
+              Advocate · Kozhikode, Kerala
+            </div>
+            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(28px, 5vw, 56px)', letterSpacing: '0.06em', lineHeight: 1.1, textTransform: 'uppercase', margin: '0 0 6px' }}>
+              ADVOCATE NADEEM
+            </h1>
+            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(20px, 3.5vw, 40px)', letterSpacing: '0.06em', lineHeight: 1.15, textTransform: 'uppercase', color: C.goldLight, margin: '0 0 28px' }}>
+              MOHAMMED V.K.
+            </h1>
+            <p style={{ fontSize: 15, color: '#c5cfe0', marginBottom: 6, lineHeight: 1.7 }}>
+              District Court Kozhikode & Subordinate Courts at Kozhikode District
+            </p>
+            <p style={{ fontSize: 14, color: '#9ca3af', lineHeight: 1.7, marginBottom: 36 }}>
+              Litigation before courts and tribunals across Kozhikode district
+            </p>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              <Link to="/contact" style={{ background: C.gold, color: C.white, textDecoration: 'none', padding: '13px 28px', borderRadius: 6, fontWeight: 700, fontSize: 14, letterSpacing: '0.05em' }}>
+                Get in Touch
+              </Link>
+              <Link to="/practice-areas" style={{ border: '1px solid rgba(255,255,255,0.3)', color: C.white, textDecoration: 'none', padding: '13px 28px', borderRadius: 6, fontSize: 14 }}>
+                Practice Areas
+              </Link>
+            </div>
+          </div>
+
+          {/* Right — office photo */}
+          <div className="hero-img-wrap" style={{ width: 340, flexShrink: 0 }}>
+            <img
+              src="/AdvocatesinKozhikode.webp"
+              alt="Office of Advocate Nadeem Mohammed V.K., Kozhikode"
+              style={{
+                width: '100%',
+                height: 420,
+                objectFit: 'cover',
+                borderRadius: 12,
+                display: 'block',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              }}
+            />
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 720px) {
+            .hero-grid { grid-template-columns: 1fr !important; }
+            .hero-img-wrap { width: 100% !important; margin-top: 2rem; }
+            .hero-img-wrap img { height: 240px !important; }
+          }
+        `}</style>
       </section>
 
-      {/* ── WHAT THE PRACTICE STANDS ON ──────────────────────────────────── */}
-      <section style={{ background: C.white, padding: 'clamp(3.5rem,7vw,5rem) 1.5rem', borderBottom: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>What the Practice Stands On</p>
-          <h2 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: 'clamp(1.5rem,4vw,2.1rem)', margin: '0 0 0.75rem' }}>The Foundation</h2>
-          <p style={{ color: C.textMuted, fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
-            Three principles organise the conduct of every matter before this chambers, regardless of court or subject matter.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {PRINCIPLES.map((p, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '48px 1fr', gap: '1.5rem', padding: '1.75rem 0', borderTop: `1px solid ${C.border}` }}>
-                <div style={{ fontFamily: "'Manjari', Georgia, serif", color: C.gold, fontSize: '1.1rem', fontWeight: 700, paddingTop: '0.1rem' }}>{p.num}</div>
-                <div>
-                  <h3 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: '1.05rem', fontWeight: 700, margin: '0 0 0.5rem' }}>{p.title}</h3>
-                  <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.75, margin: 0 }}>{p.body}</p>
+      {/* Practice Areas */}
+      <section style={{ padding: '80px 24px', background: C.offWhite }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <div style={{ fontSize: 12, letterSpacing: '0.2em', color: C.gold, textTransform: 'uppercase', marginBottom: 12 }}>Areas of Practice</div>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: C.navy }}>Practice Areas</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
+            {AREAS.map(a => (
+              <Link key={a.slug} to={`/practice-areas/${a.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 8, padding: '28px 24px', height: '100%', transition: 'box-shadow 0.2s, border-color 0.2s' }}
+                  onMouseOver={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)'; e.currentTarget.style.borderColor = C.gold }}
+                  onMouseOut={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = C.border }}>
+                  <div style={{ width: 32, height: 3, background: C.gold, marginBottom: 16, borderRadius: 2 }} />
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: C.navy, marginBottom: 10 }}>{a.title}</h3>
+                  <p style={{ fontSize: 14, color: C.textMuted, lineHeight: 1.7 }}>{a.desc}</p>
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section style={{ padding: '80px 24px', background: C.white }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <div style={{ fontSize: 12, letterSpacing: '0.2em', color: C.gold, textTransform: 'uppercase', marginBottom: 12 }}>Approach</div>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: C.navy }}>How I Work</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32 }}>
+            {PRINCIPLES.map((p, i) => (
+              <div key={i} style={{ textAlign: 'center', padding: '24px 20px' }}>
+                <div style={{ width: 48, height: 48, borderRadius: '50%', background: C.offWhite, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: 20, fontWeight: 700, color: C.navy }}>
+                  {i + 1}
+                </div>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: C.navy, marginBottom: 12 }}>{p.title}</h3>
+                <p style={{ fontSize: 14, color: C.textMuted, lineHeight: 1.8 }}>{p.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── PRACTICE AREAS GRID ──────────────────────────────────────────── */}
-      <section style={{ background: C.offWhite, padding: 'clamp(3.5rem,7vw,5rem) 1.5rem' }}>
-        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Areas of Practice</p>
-          <h2 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: 'clamp(1.5rem,4vw,2.1rem)', margin: '0 0 2rem' }}>Practice Areas</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: '1px', background: C.border, border: `1px solid ${C.border}`, borderRadius: 8, overflow: 'hidden' }}>
-            {PRACTICE_AREAS.map((area) => (
-              <div key={area.slug} style={{ background: C.white, padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <h3 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: '1rem', fontWeight: 700, margin: 0 }}>{area.title}</h3>
-                <p style={{ color: C.textMuted, fontSize: '0.85rem', lineHeight: 1.55, margin: 0, flex: 1 }}>{area.scope}</p>
-                <Link to={`/practice-areas/${area.slug}`} style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.72rem', letterSpacing: '0.06em', textDecoration: 'none', marginTop: '0.25rem' }}>
-                  View Practice Area →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA BAND ─────────────────────────────────────────────────────── */}
-      <section style={{ background: C.navy, padding: '3rem 1.5rem', textAlign: 'center' }}>
+      {/* CTA */}
+      <section style={{ background: C.navy, color: C.white, padding: '64px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontSize: 'clamp(1.3rem,3vw,1.75rem)', margin: '0 0 1rem' }}>Ready to discuss your matter?</h2>
-          <p style={{ color: '#a8bcd4', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.75rem' }}>Consultations are conducted by prior appointment from the chambers at S.M. Arcade, Second Floor, PM Taj Road, Palayam, Kozhikode.</p>
-          <Link to="/contact" style={{ display: 'inline-block', background: C.white, color: C.navy, padding: '13px 32px', borderRadius: 4, textDecoration: 'none', fontFamily: 'monospace', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.06em' }}>
-            Book a Consultation →
+          <h2 style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 700, marginBottom: 16 }}>Need Legal Assistance?</h2>
+          <p style={{ fontSize: 15, color: '#9ca3af', marginBottom: 32, lineHeight: 1.7 }}>
+            Get in touch to discuss your matter and understand your legal options.
+          </p>
+          <Link to="/contact" style={{ background: C.gold, color: C.white, textDecoration: 'none', padding: '14px 36px', borderRadius: 6, fontWeight: 700, fontSize: 14 }}>
+            Contact Now
           </Link>
         </div>
       </section>
