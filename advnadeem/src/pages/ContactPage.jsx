@@ -1,7 +1,7 @@
 import { C } from '../lib/theme'
 
 const CONTACT_ROWS = [
-  { label: 'Office',        value: 'SM Arcade, PM Taj Road, Palayam, Kozhikode, Kerala 673001', link: null },
+  { label: 'Office',        value: 'S.M. Arcade, Second Floor, PM Taj Road, Palayam, Kozhikode, Kerala - 673001', link: null },
   { label: 'Phone',         value: '+91 77363 89036', link: 'tel:+917736389036' },
   { label: 'WhatsApp',      value: 'Message us on WhatsApp →', link: 'https://wa.me/917736389036' },
   { label: 'Hours',         value: 'Monday to Saturday, 9:00 am – 6:00 pm', link: null },
@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Get in Touch</p>
           <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-            The office of Advocate Nadeem Mohammed V.K. is located at SM Arcade, Palayam, Kozhikode — minutes from the district courts. Consultations are conducted by prior appointment.
+            The office of Advocate Nadeem Mohammed V.K. is located at S.M. Arcade, Second Floor, PM Taj Road, Palayam, Kozhikode — minutes from the district courts. Consultations are conducted by prior appointment.
           </p>
 
           {/* Contact table */}
