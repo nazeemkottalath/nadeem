@@ -9,11 +9,13 @@ export default function Footer() {
 
           {/* Left — Identity */}
           <div>
-            <div style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontSize: '1rem', fontWeight: 700, marginBottom: '0.3rem' }}>Adv. Nadeem Mohammed V.K.</div>
+            <div style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontSize: '1rem', fontWeight: 700, marginBottom: '0.3rem' }}>Advocate Nadeem Mohammed V.K.</div>
             <div style={{ color: C.goldLight, fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'monospace', marginBottom: '1rem' }}>Advocates & Legal Consultants</div>
             <address style={{ color: '#a8bcd4', fontSize: '0.85rem', lineHeight: 1.7, fontStyle: 'normal' }}>
-              SM Arcade, PM Taj Rd Palayam,<br />
-              Kozhikode 673001
+              S.M. Arcade, Second Floor,<br />
+              PM Taj Road, Palayam,<br />
+              Kozhikode, Kerala - 673001<br />
+              <a href="tel:+917736389036" style={{ color: '#c9daf8', textDecoration: 'none' }}>+91 77363 89036</a>
             </address>
           </div>
 
@@ -32,7 +34,7 @@ export default function Footer() {
             <div style={{ color: '#a8bcd4', fontSize: '0.85rem', lineHeight: 1.8 }}>
               <a href="tel:+917736389036" style={{ color: '#c9daf8', textDecoration: 'none', display: 'block' }}>+91 77363 89036</a>
               <a href="https://wa.me/917736389036" target="_blank" rel="noopener noreferrer" style={{ color: '#a8bcd4', textDecoration: 'none', display: 'block' }}>WhatsApp: Message us →</a>
-              <span style={{ display: 'block', marginTop: '0.25rem' }}>SM Arcade, Palayam</span>
+              <span style={{ display: 'block', marginTop: '0.25rem' }}>S.M. Arcade, Second Floor, Palayam</span>
             </div>
           </div>
         </div>
@@ -40,7 +42,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.25rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.75rem', alignItems: 'flex-start' }}>
           <p style={{ color: '#4a6080', fontFamily: 'monospace', fontSize: '0.65rem' }}>
-            © 2026 Nadeem Associates. All rights reserved.
+            © 2026 Advocate Nadeem Mohammed V.K. All rights reserved.
           </p>
           <p style={{ color: '#4a6080', fontSize: '0.72rem', lineHeight: 1.55, maxWidth: 480, textAlign: 'right' }}>
             This website is intended for informational purposes only and does not constitute solicitation or advertising. Accessing this website does not create a lawyer–client relationship.
