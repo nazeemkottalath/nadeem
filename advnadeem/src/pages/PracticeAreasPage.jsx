@@ -5,27 +5,20 @@ export const AREAS = [
   {
     slug: 'criminal-defence',
     title: 'Criminal Defence',
-    scope: 'FIR matters, bail applications, trial proceedings, High Court revisions.',
-    body: `Criminal matters before these chambers range from the registration of an FIR through to revision petitions before the Kerala High Court. Bail applications — both anticipatory and regular — are filed with attention to the specific facts, the applicable precedent, and the conditions likely to be imposed by the court. Trial proceedings are conducted before the Sessions Court and Magistracy in Kozhikode.`,
-    matters: ['Anticipatory bail', 'Regular bail', 'Criminal revision', 'Quashing petition (S.482 CrPC)', 'Trial defence'],
-  },
-  {
-    slug: 'civil-litigation',
-    title: 'Civil Litigation',
-    scope: 'Property disputes, injunctions, declaratory suits, execution, appeals.',
-    body: `Civil disputes before this chambers include property title disputes, partition matters, injunction proceedings, and declaratory suits before the Munsiff Courts and Civil District Court. Interlocutory applications for interim relief are filed at the earliest stage the record supports. Execution proceedings and civil appeals are conducted before the Civil District Court and the Kerala High Court.`,
-    matters: ['Property disputes', 'Injunctions', 'Partition suits', 'Declaratory reliefs', 'Execution petitions'],
+    scope: 'FIR matters, regular bail, anticipatory bail, trial proceedings.',
+    body: `Criminal matters before these chambers range from the registration of an FIR through to trial proceedings before the Sessions Court and Magistracy in Kozhikode. Bail applications — both anticipatory and regular — are filed with attention to the specific facts, the applicable precedent, and the conditions likely to be imposed by the court.`,
+    matters: ['Anticipatory bail', 'Regular bail', 'FIR matters', 'Quashing petition (S.482 CrPC)', 'Trial defence'],
   },
   {
     slug: 'family-matrimonial-law',
     title: 'Family & Matrimonial Law',
-    scope: 'Matrimonial disputes, maintenance, custody, succession.',
-    body: `Matrimonial proceedings before the Family Court, Kozhikode involve questions of divorce, judicial separation, maintenance under the CrPC and the Hindu Adoption and Maintenance Act, and child custody. Succession disputes arising from intestate and testamentary matters are handled alongside matrimonial proceedings where they arise. The nature of family proceedings requires discretion in both conduct and communication.`,
-    matters: ['Divorce', 'Judicial separation', 'Maintenance', 'Child custody', 'Adoption', 'Succession'],
+    scope: 'Matrimonial disputes, maintenance, child custody, succession and partition.',
+    body: `Matrimonial proceedings before the Family Court, Kozhikode involve questions of divorce, judicial separation, maintenance under the CrPC and the Hindu Adoption and Maintenance Act, and child custody. Succession and partition disputes arising from intestate and testamentary matters are handled alongside matrimonial proceedings where they arise. The nature of family proceedings requires discretion in both conduct and communication.`,
+    matters: ['Divorce', 'Judicial separation', 'Maintenance', 'Child custody', 'Adoption', 'Succession and partition'],
   },
   {
     slug: 'cheque-dishonour-section-138',
-    title: 'Cheque Dishonour — Section 138',
+    title: 'Cheque Dishonour',
     scope: 'NI Act proceedings before the Magistracy and Kerala High Court.',
     body: `Section 138 of the Negotiable Instruments Act imposes strict procedural requirements. The demand notice must be issued within the statutory period. The complaint must be filed within the prescribed limitation from the date of dishonour or the expiry of the notice period. Failure at either stage is fatal to the complaint. Both complainants and accused persons are represented through Magistrate trial and High Court appellate proceedings.`,
     matters: ['Demand notice', 'Magistrate trial', 'Acquittal / conviction appeals', 'Compounding'],
@@ -33,16 +26,9 @@ export const AREAS = [
   {
     slug: 'commercial-disputes',
     title: 'Commercial Disputes',
-    scope: 'Contract disputes, Commercial Court, recovery proceedings.',
-    body: `Commercial disputes before the Commercial Court, Kozhikode and the Kerala High Court include breach of contract claims, money recovery suits, and disputes arising from confidentiality and non-compete obligations. The Commercial Courts Act imposes its own procedural framework — including mandatory pre-institution mediation and case management hearings — which require attention from the outset of a matter.`,
-    matters: ['Contract disputes', 'Commercial Court proceedings', 'Injunction for business protection', 'Recovery suits'],
-  },
-  {
-    slug: 'consumer-protection',
-    title: 'Consumer Protection',
-    scope: 'Proceedings before Consumer Disputes Redressal Commissions.',
-    body: `Consumer disputes arise from deficient services, defective goods, unfair trade practices, and insurance claim rejections. Proceedings are conducted before the District Consumer Disputes Redressal Commission and, on appeal, the Kerala State Commission. The consumer forum process is distinct from civil court litigation in its procedure, timelines, and the relief available.`,
-    matters: ['District Commission', 'State Commission', 'Deficiency of service', 'Insurance disputes'],
+    scope: 'Commercial debt recovery proceedings.',
+    body: `Commercial debt recovery proceedings before the Commercial Court, Kozhikode and the Kerala High Court include money recovery suits, breach of contract claims, and disputes arising from business obligations. The Commercial Courts Act imposes its own procedural framework — including mandatory pre-institution mediation and case management hearings — which require attention from the outset of a matter.`,
+    matters: ['Debt recovery suits', 'Commercial Court proceedings', 'Injunction for business protection', 'Contract disputes'],
   },
   {
     slug: 'motor-accident-claims',
@@ -113,7 +99,7 @@ export default function PracticeAreasPage() {
       <section style={{ background: C.navy, padding: '3.5rem 1.5rem 3rem' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <h1 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontSize: 'clamp(1.75rem,5vw,2.75rem)', fontWeight: 700, margin: '0 0 0.75rem', lineHeight: 1.2, textTransform: 'uppercase' }}>Practice Areas</h1>
-          <p style={{ color: '#a8bcd4', fontSize: '0.95rem', maxWidth: 600, lineHeight: 1.7 }}>Each card opens to a dedicated page. Matters are handled before the Kerala High Court and courts across the Malabar region.</p>
+          <p style={{ color: '#a8bcd4', fontSize: '0.95rem', maxWidth: 600, lineHeight: 1.7 }}>Each card opens to a dedicated page. Matters are handled before courts across the Kozhikode district.</p>
         </div>
       </section>
 
