@@ -26,7 +26,7 @@ export const AREAS = [
   {
     slug: 'commercial-disputes',
     title: 'Commercial Disputes',
-    scope: 'Commercial debt recovery proceedings.',
+    scope: 'Contract disputes, commercial suits, debt recovery proceedings.',
     body: `Commercial debt recovery proceedings before the Commercial Court, Kozhikode and the Kerala High Court include money recovery suits, breach of contract claims, and disputes arising from business obligations. The Commercial Courts Act imposes its own procedural framework — including mandatory pre-institution mediation and case management hearings — which require attention from the outset of a matter.`,
     matters: ['Debt recovery suits', 'Commercial Court proceedings', 'Injunction for business protection', 'Contract disputes'],
   },
