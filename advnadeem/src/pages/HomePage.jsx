@@ -49,7 +49,7 @@ export default function HomePage() {
             Principled advocacy. Disciplined practice.
           </p>
           <p style={{ color: '#c9daf8', fontSize: '1rem', lineHeight: 1.8, maxWidth: 620, marginBottom: '2.5rem' }}>
-            The chambers of Advocate Nadeem Mohammed V.K. conducts litigation before district of Kozhikode and courts and tribunals across Kozhikode district. Matters are prepared with attention to both legal principle and procedural consequence.
+            The chambers of Advocate Nadeem Mohammed V.K. conducts litigation before district court Kozhikode and courts and tribunals across Kozhikode district. Matters are prepared with attention to both legal principle and procedural consequence.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ background: C.white, color: C.navy, padding: '13px 28px', borderRadius: 4, textDecoration: 'none', fontFamily: 'monospace', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.06em' }}>
