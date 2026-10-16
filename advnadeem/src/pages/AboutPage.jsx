@@ -32,13 +32,13 @@ export default function AboutPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>The Advocate</p>
           <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85, marginBottom: '1rem' }}>
-            Advocate Nadeem Mohammed V.K. is the principal advocate of the chambers. He is enrolled with the Bar Council of Kerala and has been in active practice before the courts in Kozhikode and the Kerala High Court.
+            Advocate Nadeem Mohammed V.K. is a practising lawyer based in Kozhikode (Calicut), Kerala, providing professional legal services with a primary focus on criminal defence and family and matrimonial law.
           </p>
           <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85, marginBottom: '1rem' }}>
-            His formation as an advocate has been shaped by sustained engagement with the trial courts of Kozhikode — the Munsiff Courts, the Civil District Court, the Sessions Court, and the Magistracy — alongside regular appearances before the Kerala High Court in civil, criminal, and writ matters.
+            He handles criminal cases, bail and anticipatory bail applications, FIR-related matters, cheque dishonour cases and legal consultations. He regularly appears before courts in Kozhikode, including criminal courts and Family Courts, representing clients in matters relating to divorce, maintenance, child custody and other family disputes.
           </p>
-          <p style={{ color: C.textMuted, fontSize: '1rem', lineHeight: 1.85, fontStyle: 'italic' }}>
-            That combination of trial court experience and High Court exposure informs how matters are prepared and argued at every level.
+          <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85 }}>
+            His practice is centred on careful legal preparation, practical advice and representation tailored to the circumstances of each matter.
           </p>
         </div>
       </section>
