@@ -34,7 +34,6 @@ export default function Footer() {
             <div style={{ color: '#a8bcd4', fontSize: '0.85rem', lineHeight: 1.8 }}>
               <a href="tel:+917736389036" style={{ color: '#c9daf8', textDecoration: 'none', display: 'block' }}>+91 77363 89036</a>
               <a href="https://wa.me/917736389036" target="_blank" rel="noopener noreferrer" style={{ color: '#a8bcd4', textDecoration: 'none', display: 'block' }}>WhatsApp: Message us →</a>
-              <span style={{ display: 'block', marginTop: '0.25rem' }}>S.M. Arcade, Second Floor, Palayam</span>
             </div>
           </div>
         </div>
