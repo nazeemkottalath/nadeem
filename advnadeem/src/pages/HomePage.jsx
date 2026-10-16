@@ -21,17 +21,17 @@ export default function HomePage() {
     <div>
       {/* ── HERO ── */}
       <section style={{ background: C.navy, color: C.white, padding: 'clamp(3.5rem,7vw,5.5rem) 1.5rem clamp(3rem,6vw,5rem)' }}>
-        <div className="hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'center' }}>
+        <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3.5rem', alignItems: 'center' }}>
 
           {/* Left — text */}
           <div>
             <div style={{ fontSize: 12, letterSpacing: '0.22em', color: C.goldLight, textTransform: 'uppercase', marginBottom: 24, fontFamily: 'monospace' }}>
               Advocate · Kozhikode, Kerala
             </div>
-            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(28px, 5vw, 56px)', letterSpacing: '0.06em', lineHeight: 1.1, textTransform: 'uppercase', margin: '0 0 6px' }}>
+            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(28px, 4vw, 52px)', letterSpacing: '0.06em', lineHeight: 1.1, textTransform: 'uppercase', margin: '0 0 6px' }}>
               ADVOCATE NADEEM
             </h1>
-            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(20px, 3.5vw, 40px)', letterSpacing: '0.06em', lineHeight: 1.15, textTransform: 'uppercase', color: C.goldLight, margin: '0 0 28px' }}>
+            <h1 style={{ fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: 'clamp(20px, 3vw, 38px)', letterSpacing: '0.06em', lineHeight: 1.15, textTransform: 'uppercase', color: C.goldLight, margin: '0 0 28px' }}>
               MOHAMMED V.K.
             </h1>
             <p style={{ fontSize: 15, color: '#c5cfe0', marginBottom: 6, lineHeight: 1.7 }}>
@@ -51,13 +51,13 @@ export default function HomePage() {
           </div>
 
           {/* Right — office photo */}
-          <div className="hero-img-wrap" style={{ width: 340, flexShrink: 0 }}>
+          <div className="hero-img-wrap">
             <img
               src="/AdvocatesinKozhikode.webp"
               alt="Office of Advocate Nadeem Mohammed V.K., Kozhikode"
               style={{
                 width: '100%',
-                height: 420,
+                height: 460,
                 objectFit: 'cover',
                 borderRadius: 12,
                 display: 'block',
@@ -68,10 +68,9 @@ export default function HomePage() {
         </div>
 
         <style>{`
-          @media (max-width: 720px) {
+          @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr !important; }
-            .hero-img-wrap { width: 100% !important; margin-top: 2rem; }
-            .hero-img-wrap img { height: 240px !important; }
+            .hero-img-wrap img { height: 260px !important; }
           }
         `}</style>
       </section>
