@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* Logo / Brand */}
         <Link to="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <div style={{ fontFamily: "'Manjari', Georgia, serif", color: C.white, fontSize: '1rem', fontWeight: 700, lineHeight: 1.25 }}>
-            ADV. NADEEM MOHAMMED V.K.
+            ADVOCATE NADEEM MOHAMMED V.K.
           </div>
           <div style={{ color: '#a8bcd4', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'monospace' }}>
             Advocates & Legal Consultants · Kozhikode
