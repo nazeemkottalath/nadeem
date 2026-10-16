@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { C } from '../lib/theme'
 
-const CATEGORIES = ['All', 'Law', 'History', 'Politics', 'Travel', 'Other']
+const CATEGORIES = ['All', 'Criminal Defence', 'Family & Matrimonial Law', 'Cheque Dishonour', 'Commercial Disputes', 'Motor Accident Claims', 'Advisory & Consultation']
 
 export default function LegalInsightsPage({ posts }) {
   const [cat, setCat] = useState('All')
