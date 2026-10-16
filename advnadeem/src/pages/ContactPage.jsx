@@ -4,7 +4,7 @@ const CONTACT_ROWS = [
   { label: 'Office',        value: 'S.M. Arcade, Second Floor, PM Taj Road, Palayam, Kozhikode, Kerala - 673001', link: null },
   { label: 'Phone',         value: '+91 77363 89036', link: 'tel:+917736389036' },
   { label: 'WhatsApp',      value: 'Message us on WhatsApp →', link: 'https://wa.me/917736389036' },
-  { label: 'Hours',         value: 'Monday to Saturday, 9:00 am – 6:00 pm', link: null },
+  { label: 'Hours',         value: 'Monday to Saturday, 9:00 am – 8:30 pm', link: null },
   { label: 'Appointments',  value: 'By prior appointment only.', link: null },
   { label: 'Maps',          value: 'View on Google Maps →', link: 'https://maps.app.goo.gl/n9ow7EC7HdVL9hi48' },
 ]
