@@ -6,7 +6,6 @@ import Footer           from './components/Footer'
 import DisclaimerPopup  from './components/DisclaimerPopup'
 
 import HomePage         from './pages/HomePage'
-import AboutPage        from './pages/AboutPage'
 import PracticeAreasPage from './pages/PracticeAreasPage'
 import LegalInsightsPage from './pages/LegalInsightsPage'
 import PostPage         from './pages/PostPage'
