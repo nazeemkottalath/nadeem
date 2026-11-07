@@ -44,7 +44,6 @@ export default function Navbar() {
           <a href="tel:+917736389036" style={{ marginLeft: '0.5rem', color: C.goldLight, fontFamily: 'monospace', fontSize: '0.72rem', letterSpacing: '0.04em', textDecoration: 'none', padding: '7px 13px', border: `1px solid rgba(201,168,76,0.35)`, borderRadius: 4, whiteSpace: 'nowrap' }}>
             +91 77363 89036
           </a>
-          <Link to="/admin" style={{ marginLeft: '0.25rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'monospace', fontSize: '0.65rem', textDecoration: 'none', padding: '6px 10px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4 }}>Admin</Link>
         </div>
 
         {/* Hamburger */}
