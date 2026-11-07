@@ -10,10 +10,19 @@ const AREAS = [
   { slug: 'advisory-consultation', title: 'Advisory & Consultation', desc: 'Legal consultation, document review, and advisory services for individuals and businesses.' },
 ]
 
-const PRINCIPLES = [
-  { title: 'Careful Preparation', body: 'Every matter is approached with thorough legal research and detailed preparation before court.' },
-  { title: 'Practical Advice', body: 'Legal counsel focused on practical outcomes, communicated clearly to each client.' },
-  { title: 'Personal Attention', body: 'Each client and matter receives individual attention tailored to its specific circumstances.' },
+const VALUES = [
+  {
+    num: 'I', title: 'Honesty Before Advocacy',
+    body: 'A practitioner owes the client an accurate picture of their legal position before strategy is discussed. That assessment may not be what the client wishes to hear. It is, however, the basis on which sound decisions are made.',
+  },
+  {
+    num: 'II', title: 'Preparation as Obligation',
+    body: 'Courtroom performance is the visible end of a process that begins well before the hearing date. The quality of preparation determines the quality of the argument. This chambers treats preparation as a professional obligation, not an administrative function.',
+  },
+  {
+    num: 'III', title: 'Procedure as Substance',
+    body: 'Procedural law is not a formality. Limitation periods, notice requirements, and filing timelines carry the same weight as the substantive claim. A matter well-prepared on the merits can still be lost on a procedural omission that was entirely avoidable.',
+  },
 ]
 
 export default function HomePage() {
@@ -22,8 +31,6 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section style={{ background: C.navy, color: C.white, padding: 'clamp(3.5rem,7vw,5.5rem) 1.5rem clamp(3rem,6vw,5rem)' }}>
         <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3.5rem', alignItems: 'center' }}>
-
-          {/* Left — text */}
           <div>
             <div style={{ fontSize: 12, letterSpacing: '0.22em', color: C.goldLight, textTransform: 'uppercase', marginBottom: 24, fontFamily: 'monospace' }}>
               Advocate · Kozhikode, Kerala
@@ -49,24 +56,14 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-
-          {/* Right — office photo */}
           <div className="hero-img-wrap">
             <img
               src="/AdvocatesinKozhikode.webp"
               alt="Office of Advocate Nadeem Mohammed V.K., Kozhikode"
-              style={{
-                width: '100%',
-                height: 460,
-                objectFit: 'cover',
-                borderRadius: 12,
-                display: 'block',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-              }}
+              style={{ width: '100%', height: 460, objectFit: 'cover', borderRadius: 12, display: 'block', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
             />
           </div>
         </div>
-
         <style>{`
           @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr !important; }
@@ -75,8 +72,24 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      {/* Practice Areas */}
-      <section style={{ padding: '80px 24px', background: C.offWhite }}>
+      {/* ── THE ADVOCATE (bio) ── */}
+      <section style={{ background: C.offWhite, padding: 'clamp(3rem,6vw,4.5rem) 1.5rem', borderBottom: `1px solid ${C.border}` }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>The Advocate</p>
+          <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+            Advocate Nadeem Mohammed V.K. is a practising lawyer based in Kozhikode (Calicut), Kerala, providing professional legal services with a primary focus on criminal defence and family and matrimonial law.
+          </p>
+          <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+            He handles criminal cases, bail and anticipatory bail applications, FIR-related matters, cheque dishonour cases and legal consultations. He regularly appears before courts in Kozhikode, including criminal courts and Family Courts, representing clients in matters relating to divorce, maintenance, child custody and other family disputes.
+          </p>
+          <p style={{ color: C.textBody, fontSize: '1rem', lineHeight: 1.85 }}>
+            His practice is centred on careful legal preparation, practical advice and representation tailored to the circumstances of each matter.
+          </p>
+        </div>
+      </section>
+
+      {/* ── PRACTICE AREAS ── */}
+      <section style={{ padding: '80px 24px', background: C.white }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <div style={{ fontSize: 12, letterSpacing: '0.2em', color: C.gold, textTransform: 'uppercase', marginBottom: 12 }}>Areas of Practice</div>
@@ -85,7 +98,7 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             {AREAS.map(a => (
               <Link key={a.slug} to={`/practice-areas/${a.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 8, padding: '28px 24px', height: '100%', transition: 'box-shadow 0.2s, border-color 0.2s' }}
+                <div style={{ background: C.offWhite, border: `1px solid ${C.border}`, borderRadius: 8, padding: '28px 24px', height: '100%', transition: 'box-shadow 0.2s, border-color 0.2s' }}
                   onMouseOver={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)'; e.currentTarget.style.borderColor = C.gold }}
                   onMouseOut={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = C.border }}>
                   <div style={{ width: 32, height: 3, background: C.gold, marginBottom: 16, borderRadius: 2 }} />
@@ -98,28 +111,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Principles */}
-      <section style={{ padding: '80px 24px', background: C.white }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 12, letterSpacing: '0.2em', color: C.gold, textTransform: 'uppercase', marginBottom: 12 }}>Approach</div>
-            <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: C.navy }}>How I Work</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32 }}>
-            {PRINCIPLES.map((p, i) => (
-              <div key={i} style={{ textAlign: 'center', padding: '24px 20px' }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: C.offWhite, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: 20, fontWeight: 700, color: C.navy }}>
-                  {i + 1}
+      {/* ── THREE VALUES ── */}
+      <section style={{ background: C.offWhite, padding: 'clamp(3rem,6vw,4.5rem) 1.5rem', borderBottom: `1px solid ${C.border}` }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <p style={{ color: C.gold, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Professional Values</p>
+          <h2 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: 'clamp(1.4rem,3.5vw,1.9rem)', margin: '0 0 0.75rem' }}>Three values govern the conduct of practice in this chambers.</h2>
+          <div style={{ marginTop: '1.5rem' }}>
+            {VALUES.map((v, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '48px 1fr', gap: '1.5rem', padding: '1.75rem 0', borderTop: `1px solid ${C.border}` }}>
+                <div style={{ fontFamily: "'Manjari', Georgia, serif", color: C.gold, fontSize: '1.1rem', fontWeight: 700 }}>{v.num}</div>
+                <div>
+                  <h3 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: '1.05rem', fontWeight: 700, margin: '0 0 0.5rem' }}>{v.title}</h3>
+                  <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.75, margin: 0 }}>{v.body}</p>
                 </div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: C.navy, marginBottom: 12 }}>{p.title}</h3>
-                <p style={{ fontSize: 14, color: C.textMuted, lineHeight: 1.8 }}>{p.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <section style={{ background: C.navy, color: C.white, padding: '64px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 700, marginBottom: 16 }}>Need Legal Assistance?</h2>
