@@ -4,7 +4,6 @@ import { C } from '../lib/theme'
 
 const NAV_LINKS = [
   { to: '/',               label: 'Home'           },
-  { to: '/about',          label: 'About'          },
   { to: '/practice-areas', label: 'Practice Areas' },
   { to: '/legal-insights', label: 'Legal Insights' },
   { to: '/contact',        label: 'Contact'        },
