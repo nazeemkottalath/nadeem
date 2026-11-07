@@ -9,6 +9,12 @@ import { supabase } from '../lib/supabase'
 
 const CATEGORIES = ['Criminal Defence', 'Family & Matrimonial Law', 'Cheque Dishonour', 'Commercial Disputes', 'Motor Accident Claims', 'Advisory & Consultation']
 
+const ALLOWED_EMAILS = [
+  'nadeemkottalath@gmail.com',
+  'nadeemclm@gmail.com',
+  'nazeemkottalath@gmail.com',
+]
+
 function Field({ label, children }) {
   return (
     <div style={{ marginBottom: '1.25rem' }}>
@@ -18,25 +24,50 @@ function Field({ label, children }) {
   )
 }
 
-// ── PIN Login ─────────────────────────────────────────────────────────────────
+// ── Email + Password Login ────────────────────────────────────────────────────
 export function AdminLogin({ settings, onLogin }) {
-  const [pin, setPin] = useState('')
-  const [err, setErr] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [err, setErr] = useState('')
+
   const check = () => {
-    if (pin === settings?.admin_pin) { setErr(false); onLogin() }
-    else { setErr(true); setPin('') }
+    const normalised = email.trim().toLowerCase()
+    if (!ALLOWED_EMAILS.includes(normalised)) {
+      setErr('This email is not authorised.'); setPassword(''); return
+    }
+    if (password !== settings?.admin_pin) {
+      setErr('Incorrect password.'); setPassword(''); return
+    }
+    setErr(''); onLogin()
   }
+
   return (
     <div style={{ background: C.offWhite, minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
       <div style={{ background: C.white, border: `1px solid ${C.border}`, borderTop: `4px solid ${C.navy}`, borderRadius: 8, padding: '2.5rem', width: '100%', maxWidth: 360, boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
         <h2 style={{ fontFamily: "'Manjari', Georgia, serif", color: C.navy, fontSize: '1.4rem', margin: '0 0 0.5rem' }}>Admin Access</h2>
-        <p style={{ color: C.textMuted, fontSize: '0.9rem', marginBottom: '1.5rem' }}>Enter your PIN to manage the website.</p>
-        <input type="password" value={pin} onChange={e => setPin(e.target.value)} onKeyDown={e => e.key === 'Enter' && check()}
-          placeholder="Enter PIN" maxLength={8}
-          style={{ ...IS, border: `1px solid ${err ? C.red : C.borderDark}`, fontSize: '1.1rem', letterSpacing: '0.3em' }}
-        />
-        {err && <p style={{ color: C.red, fontSize: '0.82rem', marginTop: '0.5rem' }}>Incorrect PIN. Please try again.</p>}
-        <button onClick={check} style={{ width: '100%', background: C.navy, color: C.white, border: 'none', borderRadius: 6, padding: '12px', fontFamily: 'monospace', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', cursor: 'pointer', marginTop: '1rem' }}>ENTER</button>
+        <p style={{ color: C.textMuted, fontSize: '0.9rem', marginBottom: '1.5rem' }}>Sign in with your Gmail address to manage the website.</p>
+        <div style={{ marginBottom: '1rem' }}>
+          <label style={{ display: 'block', color: C.textMuted, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Gmail Address</label>
+          <input
+            type="email" value={email} onChange={e => setEmail(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && check()}
+            placeholder="you@gmail.com" autoComplete="email"
+            style={{ ...IS }}
+          />
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <label style={{ display: 'block', color: C.textMuted, fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Password</label>
+          <input
+            type="password" value={password} onChange={e => setPassword(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && check()}
+            placeholder="Enter password"
+            style={{ ...IS }}
+          />
+        </div>
+        {err && <p style={{ color: C.red, fontSize: '0.82rem', marginTop: '0.5rem' }}>{err}</p>}
+        <button onClick={check} style={{ width: '100%', background: C.navy, color: C.white, border: 'none', borderRadius: 6, padding: '12px', fontFamily: 'monospace', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', cursor: 'pointer', marginTop: '0.5rem' }}>
+          SIGN IN
+        </button>
       </div>
     </div>
   )
@@ -347,9 +378,9 @@ function SettingsEditor({ settings, setSettings, onSave, onCancel, saving }) {
         <Field label="Site Name"><input value={settings.site_name||''} onChange={e => set('site_name', e.target.value)} style={IS} /></Field>
         <Field label="Site Tagline"><input value={settings.site_tagline||''} onChange={e => set('site_tagline', e.target.value)} style={IS} /></Field>
         <Field label="SEO Meta Description"><input value={settings.meta_desc||''} onChange={e => set('meta_desc', e.target.value)} style={IS} /></Field>
-        <Field label="Admin PIN"><input type="password" value={settings.admin_pin||''} onChange={e => set('admin_pin', e.target.value)} style={IS} /></Field>
+        <Field label="Admin Password"><input type="password" value={settings.admin_pin||''} onChange={e => set('admin_pin', e.target.value)} style={IS} /></Field>
         <div style={{ background: '#fffbef', border: '1px solid #e8d9a0', borderRadius: 6, padding: '1rem', marginBottom: '1.25rem' }}>
-          <p style={{ color: C.textMuted, fontSize: '0.82rem', lineHeight: 1.6 }}>⚠️ Changing the PIN here updates the Supabase <code>settings</code> table. Note your new PIN before saving.</p>
+          <p style={{ color: C.textMuted, fontSize: '0.82rem', lineHeight: 1.6 }}>⚠️ Changing the password here updates the Supabase <code>settings</code> table. Note your new password before saving.</p>
         </div>
         <button onClick={() => onSave(settings)} disabled={saving} style={{ background: saving ? C.textFaint : C.navy, color: C.white, border: 'none', padding: '11px 26px', borderRadius: 5, cursor: saving ? 'not-allowed' : 'pointer', fontFamily: 'monospace', fontWeight: 700, fontSize: '0.85rem' }}>
           {saving ? 'Saving…' : 'Save Settings'}
