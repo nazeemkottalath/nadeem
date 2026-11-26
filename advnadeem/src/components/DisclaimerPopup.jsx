@@ -16,11 +16,19 @@ export default function DisclaimerPopup({ onAccept }) {
             This website has been created solely to provide <strong style={{ color: C.navy }}>general legal information</strong> to members of the public. Nothing here constitutes legal advice, solicitation, or advertising.
           </p>
           <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.8, margin: 0 }}>
-            By proceeding, you confirm that you are seeking information of your own accord and that no lawyer–client relationship is created by your use of this website.
+            By proceeding, you confirm that you are seeking information of your own accord and that no lawyer-client relationship is created by your use of this website.
           </p>
         </div>
-        <button onClick={onAccept}
+        <button
+          onClick={onAccept}
           style={{ width: '100%', background: C.navy, color: C.white, border: 'none', borderRadius: 6, padding: '14px', fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.08em', cursor: 'pointer' }}
           onMouseEnter={e => e.currentTarget.style.background = C.navyLight}
           onMouseLeave={e => e.currentTarget.style.background = C.navy}
-        >I Understand — Proceed to Website</button>
+        >
+          I Understand - Proceed to Website
+        </button>
+        <p style={{ color: C.textFaint, fontSize: '0.65rem', textAlign: 'center', marginTop: '1rem', fontFamily: 'monospace' }}>Rule 36, Bar Council of India Rules</p>
+      </div>
+    </div>
+  )
+}
