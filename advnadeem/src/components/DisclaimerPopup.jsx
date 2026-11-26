@@ -13,9 +13,6 @@ export default function DisclaimerPopup({ onAccept }) {
         <p style={{ color: C.gold, fontFamily: "'Manjari', sans-serif", fontSize: '0.72rem', letterSpacing: '0.18em', textTransform: 'uppercase', textAlign: 'center', marginBottom: '1.75rem' }}>Bar Council of India Rules</p>
         <div style={{ background: '#f0f4fb', border: `1px solid ${C.border}`, borderLeft: `3px solid ${C.navy}`, borderRadius: 6, padding: '1.25rem', marginBottom: '1.5rem' }}>
           <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.8, margin: '0 0 0.9rem' }}>
-            Under the rules of the <strong style={{ color: C.navy }}>Bar Council of India</strong>, advocates are not permitted to solicit work or advertise their professional services in any manner.
-          </p>
-          <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.8, margin: '0 0 0.9rem' }}>
             This website has been created solely to provide <strong style={{ color: C.navy }}>general legal information</strong> to members of the public. Nothing here constitutes legal advice, solicitation, or advertising.
           </p>
           <p style={{ color: C.textBody, fontSize: '0.95rem', lineHeight: 1.8, margin: 0 }}>
@@ -26,9 +23,4 @@ export default function DisclaimerPopup({ onAccept }) {
           style={{ width: '100%', background: C.navy, color: C.white, border: 'none', borderRadius: 6, padding: '14px', fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.08em', cursor: 'pointer' }}
           onMouseEnter={e => e.currentTarget.style.background = C.navyLight}
           onMouseLeave={e => e.currentTarget.style.background = C.navy}
-        >I Understand — Proceed to Website</button>
-        <p style={{ color: C.textFaint, fontSize: '0.65rem', textAlign: 'center', marginTop: '1rem', fontFamily: 'monospace' }}>Rule 36, Bar Council of India Rules</p>
-      </div>
-    </div>
-  )
-}
+        >I Understand — Proceed to
