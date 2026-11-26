@@ -23,4 +23,4 @@ export default function DisclaimerPopup({ onAccept }) {
           style={{ width: '100%', background: C.navy, color: C.white, border: 'none', borderRadius: 6, padding: '14px', fontFamily: "'Manjari', sans-serif", fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.08em', cursor: 'pointer' }}
           onMouseEnter={e => e.currentTarget.style.background = C.navyLight}
           onMouseLeave={e => e.currentTarget.style.background = C.navy}
-        >I Understand — Proceed to
+        >I Understand — Proceed to Website</button>
